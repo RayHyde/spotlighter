@@ -1,0 +1,50 @@
+[
+	{
+		"tipSeq": 1,
+		"tipLink": "h1",
+		"tipText": "<strong>header &lt;h1&gt;</strong><br>There should only be one &lt;h1&gt; tag on a page",
+		"tipSize": 250,
+		"adjustX" : -400,
+		"adjustY" : 0
+	},
+	{
+		"tipSeq": 2,
+		"tipLink": ".nav-pills li:nth-child(2)",
+		"tipText": "<strong>.nav-pills li:nth-child(2)</strong><br>You can use any jQuery or CSS designator to spotlight.",
+		"tipSize": 150,
+		"adjustX" : 0,
+		"adjustY" : 0
+	},
+	{
+		"tipSeq": 3,
+		"tipLink": ".startspotlighter",
+		"tipText": "<h4>&lt;button class=\"startspotlighter\"&gt;</h4> Spotlighter scrolls up and down as needed",
+		"tipSize": 200,
+		"adjustX" : 0,
+		"adjustY" : 0
+	},
+	{
+		"tipSeq": 6,
+		"tipLink": "#explain",
+		"tipText": "<strong>#element by id</strong><br>Oh, and don't scroll too much up and down &mdash; your visitor may become dizzy...",
+		"tipSize": 300,
+		"adjustX" : 0,
+		"adjustY" : 0
+	},
+	{
+		"tipSeq": 4,
+		"tipLink": ".explain1",
+		"tipText": "<strong>HTML tags</strong><br>Be sure to use &amp;lt; and &amp;gt; if you want to write visible HTML tags. And use &amp;#39; and &amp;quot; to write visible quotation marks",
+		"tipSize": 200,
+		"adjustX" : -200,
+		"adjustY" : 0
+	},
+	{
+		"tipSeq": 5,
+		"tipLink": ".btn.download2",
+		"tipText": "<strong>.element by class name</strong><br>Can be done, but make sure there is only one element with that class name!",
+		"tipSize": 150,
+		"adjustX" : 0,
+		"adjustY" : 0
+	}
+]

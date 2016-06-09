@@ -1,0 +1,99 @@
+<h1>Spotlighter</h1>
+<h2>a jQuery plugin that explains your web page</h2>
+
+<p>Spotlighter is a tutorial tool that highlights parts of your web page for instruction or explanation. You can either add inline data tags to the element you want to highlight, or put everything in a JSON file and load all data tags in one fell swoop.</p>
+
+<p>Adjust the position of the spotlight per element to the left or right or up and down, and even broaden or narrow the spotlight's beam for each element individually. All is styled in LESS/CSS so you can adjust as you please. Even going so far as replacing the spotlight with e.g. a dotted ring or square. The spotlight has a text box that takes HTML tags, so you can style the content to your hearts content.</p>
+<p>Oh and yes, the minified version is only 2.78 K in size!</p>
+
+<p>See it in action: <a href="http://rayhyde.github.io/spotlighter/">http://rayhyde.github.io/spotlighter/</a></p>
+
+<h2>How to use this plugin</h2>
+
+<h3>1. Link the files you need</h3>
+<p>Include the jQuery script at the bottom of your page, e.g. through a CDN:</p>
+<p><code>	&lt;script src="//code.jquery.com/jquery-2.1.3.min.js"&gt;&lt;/script&gt;</code></p>
+<p>Then include the minimized version of the script:</p>
+<p><code>&lt;script src="[path to your script]/jquery.spotlighter.min.js"&gt;&lt;/script&gt;</code></p>
+<p>Change [path to your script] to where it resides, eg "js".</p>
+
+<h3>2. Create your HTML markup or create a JSON file</h3>
+<p>You can add the necessary data tags to each element straight into your HTML, something that comes in handy if you have elements that are generated on the fly, or you can create a JSON file that creates the data tags on the elements once the script is loaded. </p>
+
+<p>To add the data tags to the elements, you have to add</p>
+<p><code>
+data-spltext="The text that you want to show next to your spotlight"</code></p>
+<p>This can be everything you want to show as an explanatory text, including HTML tags such as &lt;strong&gt; or &lt;h4&gt;</p>
+<p><code>data-splsize="300"</code></p>
+<p>The size of the spotlight in pixels. You can set a default (see below) and leave this blank.</p>
+<p><code>data-splseq="1"	</code></p>
+
+<p>The sequence of the element. The spotlight jumps from one number to the next, so this allows you to have it jump up and down and across the page.</p>
+<h3>3. Call the plugin</h3>
+<p>Tell the plugin it needs to run on this page and tell it what is the element that triggers it:</p>
+<pre>
+&lt;script&gt;
+	$('.startspotlighter').spotlighter();
+&lt;/script&gt;
+</pre>
+<h3>4. Putting it all together</h3>
+<p>This is your basic page to get the plugin up and running:</p>
+<pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		...
+		&lt;link rel="stylesheet" href="css/spotlighter.css"&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		... your page content ...
+   
+		&lt;button class="startspotlighter"&gt;Show live help!&lt;button&gt;
+	 
+		... more of you page content ...
+   
+		&lt;script src="//code.jquery.com/jquery-2.1.3.min.js"&gt;&lt;/script&gt;
+		&lt;script src="js/jquery.spotlighter.min.js"&gt;&lt;/script&gt;
+		&lt;script&gt;
+			$('.startspotlighter').spotlighter();	
+		&lt;/script&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+			</pre>
+<h2>Options</h2>
+<p>If you don't specify options, like in the example above, the plugin will use its default settings:
+	<br>
+
+	<br> - json: false,
+	<br> - json_file: '',
+	<br> - default_spotlight_width: 150,
+	<br> - showNumbers: true
+</p>
+<p>These are the options:</p>
+<h3>JSON</h3>
+<p>If true, use a JSON file to tell the script what to do. This is its structure:</p>
+<pre>
+[
+	{
+    "tipSeq": 1,
+		"tipLink": ".nav-pills li:nth-child(2)", /* &lt;- can be any element */
+		"tipText": "This is the explanatory text",
+		"tipSize": 150,
+		"adjustX" : -68,	/* &lt;- plus or minus number adjusts to the right or the left */
+		"adjustY" : 20 		/* &lt;- plus or minus number adjusts up or down */
+	},
+	{
+		"tipSeq": 2,
+		"tipLink": "#download-button", /* &lt;- can be any element */
+		"tipText": "&lt;strong&gt;We're here to help&lt;/strong&gt;&lt;br&gt;This is the explanatory text",
+		"tipSize": 250,
+		"adjustX" : 0,
+		"adjustY" : 0
+	}
+]</pre>
+
+<h3>Default spotlight width</h3>
+<p>If not specified, the default is 150px</p>
+	<code>default_spotlight_width: 150</code>
+	<h3>Show sequence numbers</h3>
+	<p>If true, the sequence number is shown above the spotlighter text</p>
+	<code>showNumbers: true</code>
